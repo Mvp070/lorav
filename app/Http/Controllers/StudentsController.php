@@ -41,5 +41,65 @@ class StudentsController extends Controller
 
     	return response()->json($student);
     }
+
+    public function registerStudents(Request $req)
+    {
+        $l = false;
+        $cal ="";
+        if($req->name == null)
+        {
+            $l = true;
+            $cal .='Name не на базе';
+        }
+        if($req->last_name == null)
+        {
+            $l = true;
+            $cal .='Surname не на базе';
+        }
+        if($req->age == null)
+        {
+            $l = true;
+            $cal .='Age не на базе';
+        }
+        if($req->date_of_birth == null)
+        {
+            $l = true;
+            $cal .='Date_of_birth не на базе';
+        }
+        if($req->phone_number == null)
+        {
+            $l = true;
+            $cal .='Phone_number не на базе';
+        }
+        if($req->password == null)
+        {
+            $l = true;
+            $cal .='Password не на базе';
+        }
+        if($l == false)
+        {
+            $student = new Student();
+            $student -> create($req->all());
+            $cal = 'Все ок!';
+        }
+
+            return response()->json($cal);
+    }
+
+	public function singStudents(Request $req)
+    {
+        $student = Student::where('phone_number', $req->phone_number)->first();
+
+        if(!$student)
+        	return response()->json('Где логин');
+            
+        if($req->password != $student->password)
+           
+            return response()->json('Где пароль');
+        return response()->json('Все ок!'); 
+        
+            
+        
+    }
 }
 

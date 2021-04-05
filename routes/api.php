@@ -17,3 +17,9 @@ Route::get('/getstudents/','StudentsController@getStudents');
 Route::get('/addstudents/','StudentsController@addStudents');
 Route::patch('/updatestudents/','StudentsController@updateStudents');
 
+Route::get('/registrstudents/','StudentsController@registerStudents');
+Route::get('/singstudents/','StudentsController@singStudents');
+
+
+
+

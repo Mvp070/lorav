@@ -11,6 +11,11 @@ class Student extends Model
    	
     protected $fillable = 
     [
-        'name', 'lokal_name', 'age',
+        'name', 'last_name', 'age', 'date_of_birth', 'phone_number', 'password'
+    ];
+    
+    	protected $reg =
+    [
+    		'password'
     ];
 }
