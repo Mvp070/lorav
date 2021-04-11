@@ -20,6 +20,17 @@ Route::patch('/updatestudents/','StudentsController@updateStudents');
 Route::get('/registrstudents/','StudentsController@registerStudents');
 Route::get('/singstudents/','StudentsController@singStudents');
 
+Route::get('/registervalid/','StudentsController@registerValid');
+Route::get('/loginvalid/','StudentsController@loginValid');
+Route::get('/logoutvalid/','StudentsController@logoutValid');
+
+Route::get('/getproducts/','ProductsController@getProducts');
+Route::get('/addproducts/','ProductsController@addProducts');
+Route::get('/deleteproducts/','ProductsController@deleteProducts');
+
+
+
+
 
 
 
