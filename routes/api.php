@@ -28,6 +28,8 @@ Route::get('/getproducts/','ProductsController@getProducts');
 Route::get('/addproducts/','ProductsController@addProducts');
 Route::get('/deleteproducts/','ProductsController@deleteProducts');
 
+Route::get('/gettravel/','TravelController@getTravel');
+Route::get('/addtravel/','TravelController@addTravel');
 
 
 
